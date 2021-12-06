@@ -43,18 +43,22 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_CONF) ./etc/config/telegram_bot \
 		$(1)/etc/config/telegram_bot
 	
-	$(INSTALL_DIR) $(1)/usr/lib/telegram_bot/plugins/functions
-	$(INSTALL_BIN) ./usr/lib/telegram_bot/plugins/functions/get_mac.sh \
-				./usr/lib/telegram_bot/plugins/functions/ping.sh \
-		$(1)/usr/lib/telegram_bot/plugins/functions
+	$(INSTALL_DIR) $(1)/usr/lib/telegram-bot/plugins/functions
+	$(INSTALL_BIN) ./usr/lib/telegram-bot/plugins/functions/get_mac.sh \
+				./usr/lib/telegram-bot/plugins/functions/ping.sh \
+		$(1)/usr/lib/telegram-bot/plugins/functions
 
-	$(INSTALL_DIR) $(1)/usr/lib/telegram_bot/plugins
-	$(INSTALL_BIN) ./usr/lib/telegram_bot/plugins/r.sh \
-				./usr/lib/telegram_bot/plugins/docker.sh \
-				./usr/lib/telegram_bot/plugins/xuexi.sh \
-				./usr/lib/telegram_bot/plugins/bdstart.sh \
-				./usr/lib/telegram_bot/plugins/bdstop.sh \
-		$(1)/usr/lib/telegram_bot/plugins
+	$(INSTALL_DIR) $(1)/usr/lib/telegram-bot/plugins
+	$(INSTALL_BIN) ./usr/lib/telegram-bot/plugins/r.sh \
+				./usr/lib/telegram-bot/plugins/docker.sh \
+				./usr/lib/telegram-bot/plugins/xuexi.sh \
+				./usr/lib/telegram-bot/plugins/bdstart.sh \
+				./usr/lib/telegram-bot/plugins/bdstop.sh \
+		$(1)/usr/lib/telegram-bot/plugins
+
+	$(INSTALL_DIR) $(1)/usr/lib/telegram-bot
+	$(INSTALL_BIN) ./usr/lib/telegram-bot/telegram_bot \
+		$(1)/usr/lib/telegram-bot
 endef
 
 define Package/$(PKG_NAME)/postinst
