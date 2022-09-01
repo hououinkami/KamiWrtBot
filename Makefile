@@ -51,9 +51,11 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/telegram-bot/plugins
 	$(INSTALL_BIN) ./usr/lib/telegram-bot/plugins/r.sh \
 				./usr/lib/telegram-bot/plugins/docker.sh \
-				./usr/lib/telegram-bot/plugins/xuexi.sh \
+				./usr/lib/telegram-bot/plugins/xxqg.sh \
 				./usr/lib/telegram-bot/plugins/bdstart.sh \
 				./usr/lib/telegram-bot/plugins/bdstop.sh \
+				./usr/lib/telegram-bot/plugins/clashstart.sh \
+				./usr/lib/telegram-bot/plugins/clashstop.sh \
 		$(1)/usr/lib/telegram-bot/plugins
 
 	$(INSTALL_DIR) $(1)/usr/lib/telegram-bot
